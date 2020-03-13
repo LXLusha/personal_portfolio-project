@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -9,15 +8,11 @@
   <body>
     <div class="container text-center">
       <h1>My Portfolio</h1>
-      <img src="{% static 'portfolio/62133720_p0.jpg' %}" alt="">
-      {% for project in projects %}
-      <h2>{{ project.title }}</h2>
-      <p>{{ project.decription }}</p>
-      <img src="{{ project.image.url }}" alt="">
-      {% if project.url %}
-      <br>
-      <a href="{{ project.url }}">Link</a>
-      {% endif %}
+      {% for blog in blogs %}
+      <h2>{{ blog.title }}</h2>
+      <p>{{ blog.description }}</p>
+      {{ blog.date }}
+      <br><br><br>
       {% endfor %}
     </div>
   </body>
